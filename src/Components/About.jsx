@@ -3,7 +3,7 @@ import sid from '../assets/sid.jpg'
 
 const About = () => {
   return (
-    <div className="about pt-14 flex flex-col-reverse md:flex-row justify-around items-center min-h-screen bg-black  ">
+    <div className="about pt-14 flex flex-col-reverse md:flex-row justify-around items-center min-h-screen bg-black  overflow-x-hidden w-full">
       
       {/*left div*/}
       <div className="max-w-[50%] text-left mb-10 " >
