@@ -13,7 +13,7 @@ function menuopen(){
 }
 
   return (
-    <div className='fixed top-0 z-10 flex w-full items-center justify-between border-b border-gray-600 bg-black/90 px-16 py-4 text-white
+    <div className='fixed top-0 z-10 flex w-full items-center justify-between border-b border-gray-600 bg-black/80 px-16 py-4 text-white
     '>
       <a href="#home" className='bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent opacity-80 text-4xl font-semibold transition-all duration-300 hover:opacity-100' >Siddhant</a>
     

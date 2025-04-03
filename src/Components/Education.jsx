@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // 👈 Framer Motion import
 
 const Education = () => {
   const educationData = [
@@ -25,20 +26,26 @@ const Education = () => {
   return (
     <div className="Education py-30">
       <div className="text-center">
-        <h1 className="text-5xl  text-white">Education</h1>
+        <h1 className="text-5xl text-white">Education</h1>
       </div>
 
       <div className="py-15 flex flex-col gap-10 items-center">
         {educationData.map((edu, index) => (
-          <div
+          <motion.div
             key={index}
-            className="border border-gray-700 rounded-xl w-[100%]   px-20 py-10  text-white shadow-lg"
+            initial={{ opacity: 0, y: 50 }} // 👈 Start position (hidden + below)
+            whileInView={{ opacity: 1, y: 0 }} // 👈 Animate when in viewport
+            transition={{ duration: 0.6, delay: index * 0.2 }} // 👈 Staggered effect
+            viewport={{ once: true }}
+            className="border border-gray-700 rounded-xl w-[100%] px-20 py-10 text-white shadow-lg"
           >
-            <h2 className="text-3xl font-semibold text-left text-blue-400">{edu.institution}</h2>
+            <h2 className="text-3xl font-semibold text-left text-blue-400">
+              {edu.institution}
+            </h2>
             <p className="text-left text-gray-300">{edu.degree}</p>
             <p className="text-left text-gray-400">{edu.year}</p>
             <p className="text-left text-gray-400 font-semibold">{edu.grade}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
