@@ -1,66 +1,110 @@
+import { div } from 'framer-motion/m';
 import React, { useState } from 'react'
+import { BiMenu, BiX } from 'react-icons/bi';
+import { BsGithub, BsLinkedin, BsTwitter, BsTwitterX } from 'react-icons/bs'
 import { Link } from 'react-scroll';
-import { GiHamburgerMenu } from "react-icons/gi";
-import { RxCross1 } from "react-icons/rx";
 
 const Navbar = () => {
 
+const[isopen,setisopen]=useState(false);
 
-const [isopen,setisopen]=useState(false);
-
-function handleburger(){
-
-    setisopen(!isopen)
+function menuopen(){
+  setisopen(!isopen);
 }
 
-
   return (
-    <div className=' fixed left-0 top-0 z-50 bg-black flex items-center justify-between px-5 text-white py-2 w-full border-b-[1px] border-gray-400 '>
+    <div className='fixed top-0 z-10 flex w-full items-center justify-between border-b border-gray-600 bg-black/90 px-16 py-4 text-white
+    '>
+      <a href="#home" className='bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent opacity-80 text-4xl font-semibold transition-all duration-300 hover:opacity-100' >Siddhant</a>
+    
+    <ul className='hidden md:flex gap-10 '>
+      <li className='cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100 text-lg'>
+        
+      <Link to="Home" smooth={true} duration={500}>Home</Link>
+         </li>
+      <li className='cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100 text-lg'>
+      <Link to="Skills" smooth={true} duration={500}>Skills</Link>
+        </li>
+      <li className='cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100 text-lg'>
+      <Link to="Education" smooth={true} duration={500}>Education</Link>
+      </li>
+      <li className='cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100 text-lg'>
+      <Link to="Projects" smooth={true} duration={500}>Projects</Link>
+      </li>
+      <li className='cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100 text-lg'>
+      <Link to="Contact" smooth={true} duration={500}>Contact</Link>
+      </li>
+    </ul>
+    
+    <ul className='hidden md:flex gap-5'>
+      <li className='cursor-pointer text-2xl opacity-70 transition-all duration-300 hover:text-blue-500 hover:opacity-100 '>
+       <a href="https://www.linkedin.com/in/siddhantsinghrathoria" target='_blank'>
+       <BsLinkedin/></a>
 
-      <div className='font-bold text-xl'>Portfolio</div>
+      </li>
 
-      <div className='hidden md:flex'>
-        <ul className='flex gap-5'>
-          <li className=' hover:text-blue-500 cursor-pointer hover:underline text-gray-400'>
-          <Link to="about" smooth={true} duration={500}>About</Link>
-            </li>
-          <li className=' hover:text-blue-500 cursor-pointer hover:underline text-gray-400'>
-          <Link to="skill" smooth={true} duration={500}>Skills</Link></li>
-          <li className=' hover:text-blue-500 cursor-pointer hover:underline text-gray-400'>
-          <Link to="edu" smooth={true} duration={500}>Education</Link></li>
-          <li className=' hover:text-blue-500 cursor-pointer hover:underline text-gray-400'>
-          <Link to="contact" smooth={true} duration={500}>Contact Me</Link></li>
-        </ul>
-      </div>
+      <li className='cursor-pointer text-2xl opacity-70 transition-all duration-300 hover:text-orange-500 hover:opacity-100'>
+     <a href="https://x.com/heysid_ssr" target='_blank'>
+     <BsTwitterX/>
+     </a>
+       
+      </li>
+      <li className='cursor-pointer text-2xl opacity-70 transition-all duration-300 hover:text-green-500 hover:opacity-100'>
+      <a href="https://github.com/sidssr" target='_blank'>  <BsGithub/></a>
+       
+      </li>
 
-      <div className='hidden md:flex'>
-<a href="https://www.linkedin.com/in/siddhantsinghrathoria" target='_blank' className='bg-blue-600 rounded-lg hover:bg-blue-900 px-3 py-2'>Linkedin Profile</a>
-      </div>
+    </ul>
+      {
+        isopen? (
+          <BiX className='block md:hidden text-4xl cursor-pointer' onClick={menuopen}/>
+        ):(
+          <BiMenu className='block  md:hidden text-4xl cursor-pointer ' onClick={menuopen}/>
+        )
+      }
+   
+   {isopen && (
+    <div className='fixed right-0 top-[70px] flex h-screen w-1/2 flex-col items-start justify-start gap-10 border-1 border-gray-800 bg-black/90 p-12  md:hidden'>
+      <ul className='flex flex-col gap-10 '>
 
-      <div className='md:hidden text-2xl'>
+    
+       <li className='cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100 text-xl'>
+       <Link to="Home" smooth={true} duration={500}>Home</Link>
+       </li>
+      <li className='cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100 text-xl'>
+      <Link to="Skills" smooth={true} duration={500}>Skills</Link>
+      </li>
+      <li className='cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100 text-xl'>
+      <Link to="Education" smooth={true} duration={500}>Education</Link>
+      </li>
+      <li className='cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100 text-xl'>
+      <Link to="Projects" smooth={true} duration={500}>Projects</Link>
+      </li>
+      <li className='cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100 text-xl'>
+      <Link to="Contact" smooth={true} duration={500}>Contact Me</Link>
+      </li>
+      </ul>
+      <ul className='flex flex-wrap gap-5'>
+      <li className='cursor-pointer text-3xl opacity-70 transition-all duration-300 hover:text-blue-500 hover:opacity-100 '>
+      <a href="https://www.linkedin.com/in/siddhantsinghrathoria" target='_blank'>
+      <BsLinkedin/></a>
+      </li>
 
-      <GiHamburgerMenu onClick={handleburger} className='cursor-pointer' />
+      <li className='cursor-pointer text-3xl opacity-70 transition-all duration-300 hover:text-orange-500 hover:opacity-100'>
+      <a href="https://x.com/heysid_ssr" target='_blank'> <BsTwitterX/></a>
+      </li>
+      <li className='cursor-pointer text-3xl opacity-70 transition-all duration-300 hover:text-green-500 hover:opacity-100'>
+      <a href="https://github.com/sidssr" target='_blank'>  <BsGithub/></a>
+      </li>
 
+    </ul>
 
-{isopen &&
- <div>
-    <ul className='flex flex-col absolute top-11 right-0 gap-5 bg-black
-     border-gray-500 border p-9 rounded-bl-xl rounded-br-xl rounded-tl-xl '>
-       <RxCross1  className='cursor-pointer hover:text-blue-600 ' onClick={handleburger}/>
-          <li className=' hover:text-blue-500 font-semibold cursor-pointer hover:underline text-white'>
-          <Link to="about" smooth={true} duration={500}>About</Link>
-            </li>
-          <li className=' hover:text-blue-500  font-semibold cursor-pointer hover:underline text-white'>
-          <Link to="skill" smooth={true} duration={500}>Skills</Link></li>
-          <li className=' hover:text-blue-500 font-semibold cursor-pointer hover:underline text-white'>
-          <Link to="edu" smooth={true} duration={500}>Education</Link></li>
-          <li className=' hover:text-blue-500 font-semibold cursor-pointer hover:underline text-white'>
-          <Link to="contact" smooth={true} duration={500}>Contact Me</Link></li>
-        </ul>      
-</div> }
-      
-      </div>
+    </div>
 
+   )}
+  
+    
+    
     </div>
   )
 }

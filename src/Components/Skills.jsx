@@ -1,59 +1,49 @@
 import React from 'react'
+import { BiLogoCPlusPlus, BiLogoCss3, BiLogoFirebase, BiLogoHtml5, BiLogoJavascript, BiLogoMongodb, BiLogoNodejs, BiLogoReact, BiLogoTailwindCss } from 'react-icons/bi'
+import { motion } from 'framer-motion'
 
 const Skills = () => {
-
-const data=[
-    {
-        category:"Languages",
-        skills:["C","C++","SQL"]
-    },
-     
-    {
-        category:"Frontened",
-        skills:["HTML","CSS","Javascript","React","Tailwind CSS"]
-    },
-
-    {
-        category:"Other Skills",
-        skills:["Data Structures","Algorithms","Problem Solver"]
-    },
-
-    {
-        category:"Coursework",
-        skills:["Computer Network","Operating System","DBMS","OOPS"]
-    }
-]
-
-
-
   return (
-    <div className='text-center py-16  bg-black skill'>
+    <div className='Skills flex min-h-[70vh] w-full flex-col items-center justify-center gap-15 '>
+      <motion.h1 className='text-5xl font-light text-white'>Technologies</motion.h1>
+
+      <div className='flex flex-wrap items-center justify-center gap-6 p-5'>
+       
+       <div>
+         <BiLogoCPlusPlus className='cursor-pointer text-[80px] text-sky-500 transition-all duration-300 hover:-translate-y-5 '/>
+       </div>
+       <div>
+         <BiLogoHtml5 className='cursor-pointer text-[80px] text-pink-500 transition-all duration-300 hover:-translate-y-5 '/>
+       </div>
+       <div>
+         <BiLogoTailwindCss className='cursor-pointer text-[80px] text-green-500 transition-all duration-300 hover:-translate-y-5 '/>
+       </div>
+       <div>
+         <BiLogoJavascript className='cursor-pointer text-[80px] text-yellow-500 transition-all duration-300 hover:-translate-y-5 '/>
+       </div>
+       <div>
+         <BiLogoReact className='cursor-pointer text-[80px] text-blue-500 transition-all duration-300 hover:-translate-y-5 '/>
+       </div>
+       <div>
+         <BiLogoFirebase className='cursor-pointer text-[80px] text-orange-500 transition-all duration-300 hover:-translate-y-5 '/>
+       </div>
+       <div>
+        <BiLogoNodejs className='cursor-pointer text-[80px] text-purple-600 transition-all duration-300 hover:-translate-y-5'/>
+       </div>
+       <div>
+        <BiLogoMongodb className='cursor-pointer text-[80px] text-green-600 transition-all duration-300 hover:-translate-y-5'/>
+       </div>
+       
+       
+
+       
+    
       
-    <div>
-      <h1 className='font-bold text-4xl mb-4 text-blue-600'>Skills</h1>
-      <p className='text-xl mb-3 text-gray-500'>Here are some of my skills on which I have been working on</p>
+
+
+
       </div>
-
-
-      <div className='flex flex-wrap justify-center gap-6 px-10 py-4 '>
-       {data.map((element,index) => (
-          <div key={index} className='border-[1px] border-gray-400 py-4 rounded-lg w-[250px] flexflex-col justify-center items-center'>
-              <h1 className='font-semibold text-xl mb-3 text-white'>{element.category}</h1>
-            
-            <div className='flex flex-wrap gap-3 px-4 py-5'> 
-            
-            { element.skills.map((skill,i)=>(
-                <span key={i} className='border rounded-md px-2 py-1 text-blue-500'>{skill}</span>
-              ))
-          }
-          </div>
-          
-          </div>
-       ))
-      }
-      </div>
-
-</div>
+    </div>
   )
 }
 

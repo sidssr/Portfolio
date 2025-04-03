@@ -1,26 +1,24 @@
+import { div } from 'framer-motion/m'
 import React from 'react'
 
 const Contact = () => {
   return (
-    <div className='text-center py-20 bg-black contact '>
+
+    <div className='Contact  min-h-[50vh] min-w-full flex items-center justify-center '>
+
+  
+    <div className='flex flex-col  space-y-4 p-14 justify-center items-center'>
       
+          <div className='text-center'>
+            <h1 className='text-5xl md:text-7xl bg-gradient-to-r from-indigo-500 to to-blue-500 bg-clip-text text-transparent'> Get In Touch</h1>
+            <p className='text-gray-400 text-center text-lg font-semibold py-10'>Send an Email through this button and I'll respond as soon as possible. </p>
+          </div>
 
-      <div>
-      <h1 className='text-3xl font-semibold text-blue-500'>Contact Me</h1>
-      <p className='py-3 text-gray-400'>Feel free to reach out to me for any questions or opportunities!</p>
-      </div>
+          <div>
+            <button onClick={()=>window.location.href="mailto:siddhantrathoria18@gmail.com"} className='bg-black text-white px-5 py-3 rounded-md font-semibold cursor-pointer hover:border '>Contact Me</button>
+          </div>
 
-        <div className='border flex flex-col w-1/3 mx-auto my-1 py-4 px-4 gap-6'>
-            <input type="text" placeholder='Your Name' className='border border-gray-400 px-4 py-1 rounded-lg placeholder:text-gray-400 text-white' />
-            <input type="text " placeholder='Your Email' className=' border border-gray-400 px-4 py-1 rounded-lg placeholder:text-gray-400 text-white' />
-            <input type="text" placeholder='Your Message' className=' border border-gray-400 px-4 pb-25  rounded-lg  md:w-[380px] md:h-[150px] h-[150px] min-w-[150px] align-top text-left  placeholder:text-gray-400 text-white' />
-           
-        </div>
-
-<div>
-    <button className='bg-blue-600 px-[170px] py-2 rounded-lg text-white cursor-pointer hover:bg-blue-800'>Send</button>
-</div>
-
+    </div>
 
     </div>
   )

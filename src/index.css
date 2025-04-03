@@ -8,9 +8,18 @@ html,body{
   overflow-x: hidden;
   width: 100%;
   font-family: sans-serif;
-  background: white;
+  scroll-behavior: smooth;
  
 }
+::-webkit-scrollbar{
+  width: 20px;
+}
 
+::-webkit-scrollbar-track{
+  background: #000000c9;
+}
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(to bottom,rgb(0,62,196),rgb(184,0,153));
+}
 
 
